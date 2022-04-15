@@ -22,13 +22,19 @@ RUN wget https://github.com/Optiroc/SuperFamiconv/archive/refs/tags/v${SUPERFAMI
   && make \
   && cp /usr/src/SuperFamiconv-${SUPERFAMICONV_VERSION}/bin/superfamiconv /usr/bin/superfamiconv
 
+ADD tools/pcx2snes.c /usr/src/pcx2snes.c
+RUN gcc /usr/src/pcx2snes.c -o /usr/bin/pcx2snes
+
 FROM alpine:3.14
 
-RUN apk add --update --no-cache make wine
+RUN apk add --update --no-cache make
+
+RUN apk add --update --no-cache wine
+RUN ln -s /usr/bin/wine64 /usr/bin/wine
 
 COPY --from=build /opt/cc65 /opt/cc65
 COPY --from=build /usr/bin/superfamiconv /usr/bin/superfamiconv
-ADD tools/Pcx2Snes.exe /opt/tools/windows/pcx2snes.exe
+COPY --from=build /usr/bin/pcx2snes /usr/bin/pcx2snes
 
 ENV PATH /opt/cc65/bin:$PATH
 
