@@ -43,7 +43,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
-          context: .
+          context: /home/runner/work/snesdev-docker/snesdev-docker
           # file: ./Dockerfile
           push: true
           tags: antiherosoftware/snesdev:latest
