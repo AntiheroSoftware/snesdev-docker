@@ -16,11 +16,11 @@ RUN wget https://github.com/cc65/cc65/archive/V${CC65_VERSION}.zip -O cc65-${CC6
 
 WORKDIR /usr/src
 
-RUN wget https://github.com/Optiroc/SuperFamiconv/archive/refs/tags/v${SUPERFAMICONV_VERSION}.zip \
-  && unzip v${SUPERFAMICONV_VERSION}.zip \
-  && cd SuperFamiconv-${SUPERFAMICONV_VERSION} \
+RUN wget https://github.com/Optiroc/SuperFamiconv/archive/refs/heads/master.zip \
+  && unzip master.zip \
+  && cd master \
   && make \
-  && cp /usr/src/SuperFamiconv-${SUPERFAMICONV_VERSION}/bin/superfamiconv /usr/bin/superfamiconv
+  && cp /usr/src/master/bin/superfamiconv /usr/bin/superfamiconv
 
 ADD tools/pcx2snes.c /usr/src/pcx2snes.c
 RUN gcc /usr/src/pcx2snes.c -o /usr/bin/pcx2snes
