@@ -18,9 +18,9 @@ WORKDIR /usr/src
 
 RUN wget https://github.com/Optiroc/SuperFamiconv/archive/refs/heads/master.zip \
   && unzip master.zip \
-  && cd master \
+  && cd SuperFamiconv-master \
   && make \
-  && cp /usr/src/master/bin/superfamiconv /usr/bin/superfamiconv
+  && cp /usr/src/SuperFamiconv-master/bin/superfamiconv /usr/bin/superfamiconv
 
 ADD tools/pcx2snes.c /usr/src/pcx2snes.c
 RUN gcc /usr/src/pcx2snes.c -o /usr/bin/pcx2snes
