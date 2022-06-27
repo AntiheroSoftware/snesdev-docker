@@ -16,7 +16,7 @@ RUN wget https://github.com/cc65/cc65/archive/V${CC65_VERSION}.zip -O cc65-${CC6
 
 WORKDIR /usr/src
 
-RUN wget https://github.com/AntiheroSoftware/SuperFamiconv/archive/refs/heads/master.zip \
+RUN wget https://github.com/AntiheroSoftware/SuperFamiconv/archive/refs/heads/master.zip \ 
   && unzip master.zip \
   && cd SuperFamiconv-master \
   && make \
