@@ -42,6 +42,7 @@ RUN ln -s /usr/bin/wine64 /usr/bin/wine
 
 COPY --from=build /opt/cc65 /opt/cc65
 COPY --from=build /usr/bin/superfamiconv /usr/bin/superfamiconv
+COPY --from=build /usr/bin/superfamicheck /usr/bin/superfamicheck
 COPY --from=build /usr/bin/pcx2snes /usr/bin/pcx2snes
 
 ENV PATH /opt/cc65/bin:$PATH
