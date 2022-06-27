@@ -20,13 +20,15 @@ RUN wget https://github.com/AntiheroSoftware/SuperFamiconv/archive/refs/heads/ma
   && unzip master.zip \
   && cd SuperFamiconv-master \
   && make \
-  && cp /usr/src/SuperFamiconv-master/bin/superfamiconv /usr/bin/superfamiconv
+  && cp /usr/src/SuperFamiconv-master/bin/superfamiconv /usr/bin/superfamiconv \
+  && cd .. && rm -rf master.zip 
 
 RUN wget https://github.com/Optiroc/SuperFamicheck/archive/refs/heads/master.zip \
   && unzip master.zip \
   && cd SuperFamicheck-master \
   && make \
-  && cp /usr/src/SuperFamicheck-master/bin/superfamicheck /usr/bin/superfamicheck
+  && cp /usr/src/SuperFamicheck-master/bin/superfamicheck /usr/bin/superfamicheck \
+  && cd .. && rm -rf master.zip 
 
 ADD tools/pcx2snes.c /usr/src/pcx2snes.c
 RUN gcc /usr/src/pcx2snes.c -o /usr/bin/pcx2snes
