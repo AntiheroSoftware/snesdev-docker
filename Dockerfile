@@ -35,7 +35,7 @@ RUN gcc /usr/src/pcx2snes.c -o /usr/bin/pcx2snes
 
 FROM alpine:3.14
 
-RUN apk add --update --no-cache make gcc
+RUN apk add --update --no-cache make gcc musl-dev
 
 RUN apk add --update --no-cache wine
 RUN ln -s /usr/bin/wine64 /usr/bin/wine
