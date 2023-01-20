@@ -1,4 +1,4 @@
-FROM alpine:3.14 AS build
+FROM alpine:edge AS build
 
 RUN apk add --update --no-cache gcc g++ make musl-dev unzip wget
 
@@ -33,7 +33,7 @@ RUN wget https://github.com/Optiroc/SuperFamicheck/archive/refs/heads/master.zip
 ADD tools/pcx2snes.c /usr/src/pcx2snes.c
 RUN gcc /usr/src/pcx2snes.c -o /usr/bin/pcx2snes
 
-FROM alpine:3.14
+FROM alpine:edge
 
 RUN apk add --update --no-cache make gcc musl-dev gdb
 
