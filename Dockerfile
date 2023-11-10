@@ -33,6 +33,13 @@ RUN wget https://github.com/Optiroc/SuperFamicheck/archive/refs/heads/master.zip
 ADD tools/pcx2snes.c /usr/src/pcx2snes.c
 RUN gcc /usr/src/pcx2snes.c -o /usr/bin/pcx2snes
 
+RUN wget https://github.com/alekmaul/pvsneslib/archive/refs/heads/master.zip \
+  && unzip master.zip \
+  && cd pvsneslib/tools/gfx2snes \
+  && make \
+  && cp /usr/src/pvsneslib/tools/gfx2snes/gfx2snes /usr/bin/gfx2snes \
+  && rm -rf /usr/src/master.zip
+
 FROM alpine:edge
 
 RUN apk add --update --no-cache make gcc musl-dev gdb
@@ -44,6 +51,7 @@ COPY --from=build /opt/cc65 /opt/cc65
 COPY --from=build /usr/bin/superfamiconv /usr/bin/superfamiconv
 COPY --from=build /usr/bin/superfamicheck /usr/bin/superfamicheck
 COPY --from=build /usr/bin/pcx2snes /usr/bin/pcx2snes
+COPY --from=build /usr/bin/gfx2snes /usr/bin/gfx2snes
 
 ENV PATH /opt/cc65/bin:$PATH
 
