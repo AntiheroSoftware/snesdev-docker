@@ -35,9 +35,9 @@ RUN gcc /usr/src/pcx2snes.c -o /usr/bin/pcx2snes
 
 RUN wget https://github.com/alekmaul/pvsneslib/archive/refs/heads/master.zip \
   && unzip master.zip \
-  && cd pvsneslib/tools/gfx2snes \
+  && cd pvsneslib-master/tools/gfx2snes \
   && make \
-  && cp /usr/src/pvsneslib/tools/gfx2snes/gfx2snes /usr/bin/gfx2snes \
+  && cp /usr/src/pvsneslib-master/tools/gfx2snes/gfx2snes /usr/bin/gfx2snes \
   && rm -rf /usr/src/master.zip
 
 FROM alpine:edge
