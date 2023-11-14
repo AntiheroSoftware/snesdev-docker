@@ -40,6 +40,11 @@ RUN wget https://github.com/alekmaul/pvsneslib/archive/refs/heads/master.zip \
   && cp /usr/src/pvsneslib-master/tools/gfx2snes/gfx2snes /usr/bin/gfx2snes \
   && rm -rf /usr/src/master.zip
 
+RUN wget https://github.com/alekmaul/pvsneslib/releases/download/4.1.0/pvsneslib_410_64b_linux_release.zip \
+  && unzip pvsneslib_410_64b_linux_release.zip \
+  && mv pvsneslib /opt/pvsneslib \
+  && rm pvsneslib_410_64b_linux_release.zip
+
 FROM alpine:edge
 
 RUN apk add --update --no-cache make gcc musl-dev gdb
@@ -52,7 +57,9 @@ COPY --from=build /usr/bin/superfamiconv /usr/bin/superfamiconv
 COPY --from=build /usr/bin/superfamicheck /usr/bin/superfamicheck
 COPY --from=build /usr/bin/pcx2snes /usr/bin/pcx2snes
 COPY --from=build /usr/bin/gfx2snes /usr/bin/gfx2snes
+COPY --from=build /opt/pvsneslib /opt/pvsneslib
 
 ENV PATH /opt/cc65/bin:$PATH
+ENV PVSNESLIB_HOME /opt/pvsneslib
 
 WORKDIR /project
