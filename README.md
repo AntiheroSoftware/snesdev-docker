@@ -1,6 +1,12 @@
 # snesdev-docker
 Docker for Snes Dev. (compilation of command line tool to compile your snes projects)
 
+## Get the container from docker hub 
+
+```
+docker pull antiherosoftware/snesdev
+```
+
 ## Build the docker image
 
 ```
