@@ -7,9 +7,13 @@ WORKDIR /usr/src
 ARG CC65_VERSION=2.19
 ARG SUPERFAMICONV_VERSION=0.9.2
 
-RUN wget https://github.com/cc65/cc65/archive/V${CC65_VERSION}.zip -O cc65-${CC65_VERSION}.zip \
-  && unzip cc65-${CC65_VERSION}.zip \
-  && cd cc65-${CC65_VERSION} \
+#RUN wget https://github.com/cc65/cc65/archive/V${CC65_VERSION}.zip -O cc65-${CC65_VERSION}.zip \
+#  && unzip cc65-${CC65_VERSION}.zip \
+#  && cd cc65-${CC65_VERSION} \
+
+RUN wget https://github.com/cc65/cc65/archive/refs/heads/master.zip -O cc65-master.zip \
+  && unzip cc65-master.zip \
+  && cd cc65-master \
   && PREFIX=/opt/cc65 make \
   && PREFIX=/opt/cc65 make install \
   && find /opt/cc65/bin -type f -exec strip {} \;
