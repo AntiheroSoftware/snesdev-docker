@@ -31,6 +31,7 @@ RUN wget https://github.com/Optiroc/SuperFamicheck/archive/refs/heads/master.zip
   && unzip master.zip \
   && cd SuperFamicheck-main \
   && make \
+  && ls -alR \
   && cp /usr/src/SuperFamicheck-main/bin/superfamicheck /usr/bin/superfamicheck \
   && cd .. && rm -rf master.zip 
 
