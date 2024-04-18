@@ -1,6 +1,6 @@
 FROM alpine:edge AS build
 
-RUN apk add --update --no-cache gcc g++ make cmake musl-dev unzip wget
+RUN apk add --update --no-cache gcc g++ clang make cmake musl-dev unzip wget
 
 WORKDIR /usr/src
 
