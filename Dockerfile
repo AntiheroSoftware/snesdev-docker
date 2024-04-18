@@ -29,9 +29,9 @@ RUN wget https://github.com/AntiheroSoftware/SuperFamiconv/archive/refs/heads/ma
 
 RUN wget https://github.com/Optiroc/SuperFamicheck/archive/refs/heads/master.zip \
   && unzip master.zip \
-  && cd SuperFamicheck-master \
+  && cd SuperFamicheck-main \
   && make \
-  && cp /usr/src/SuperFamicheck-master/bin/superfamicheck /usr/bin/superfamicheck \
+  && cp /usr/src/SuperFamicheck-main/bin/superfamicheck /usr/bin/superfamicheck \
   && cd .. && rm -rf master.zip 
 
 ADD tools/pcx2snes.c /usr/src/pcx2snes.c
