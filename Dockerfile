@@ -59,7 +59,7 @@ FROM alpine:edge
 
 RUN apk add --update --no-cache make gcc musl-dev gdb
 
-RUN apk add --update --no-cache wine
+#RUN apk add --update --no-cache wine
 #RUN ln -s /usr/bin/wine64 /usr/bin/wine
 
 COPY --from=build /opt/cc65 /opt/cc65
