@@ -49,6 +49,12 @@ RUN wget https://github.com/alekmaul/pvsneslib/releases/download/4.1.0/pvsneslib
   && mv pvsneslib /opt/pvsneslib \
   && rm pvsneslib_410_64b_linux_release.zip
 
+RUN wget https://github.com/emmanuel-marty/lzsa/archive/refs/heads/master.zip \
+  && unzip master.zip \
+  && cd lzsa-master \
+  && make \
+  && cp lzsa /usr/bin/lzsa
+
 FROM alpine:edge
 
 RUN apk add --update --no-cache make gcc musl-dev gdb
