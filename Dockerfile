@@ -24,7 +24,7 @@ RUN wget https://github.com/Optiroc/SuperFamiconv/archive/refs/heads/main.zip \
   && unzip main.zip \
   && cd SuperFamiconv-main \
   && make \
-  && cp /usr/src/SuperFamiconv-main/bin/superfamiconv /usr/bin/superfamiconv \
+  && cp /usr/src/SuperFamiconv-main/build/release/superfamiconv /usr/bin/superfamiconv \
   && cd .. && rm -rf main.zip 
 
 RUN wget https://github.com/Optiroc/SuperFamicheck/archive/refs/heads/main.zip \
