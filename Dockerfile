@@ -20,14 +20,14 @@ RUN wget https://github.com/cc65/cc65/archive/refs/heads/master.zip -O cc65-mast
 
 WORKDIR /usr/src
 
-RUN wget https://github.com/AntiheroSoftware/SuperFamiconv/archive/refs/heads/master.zip \  
+RUN wget https://github.com/AntiheroSoftware/SuperFamiconv/archive/refs/heads/main.zip \  
   && unzip master.zip \
-  && cd SuperFamiconv-master \
+  && cd SuperFamiconv-main \
   && make \
   && cp /usr/src/SuperFamiconv-master/bin/superfamiconv /usr/bin/superfamiconv \
   && cd .. && rm -rf master.zip 
 
-RUN wget https://github.com/Optiroc/SuperFamicheck/archive/refs/heads/master.zip \
+RUN wget https://github.com/Optiroc/SuperFamicheck/archive/refs/heads/main.zip \
   && unzip master.zip \
   && cd SuperFamicheck-main \
   && make \
