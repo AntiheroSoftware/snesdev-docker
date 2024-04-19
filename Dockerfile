@@ -21,18 +21,18 @@ RUN wget https://github.com/cc65/cc65/archive/refs/heads/master.zip -O cc65-mast
 WORKDIR /usr/src
 
 RUN wget https://github.com/Optiroc/SuperFamiconv/archive/refs/heads/main.zip \  
-  && unzip master.zip \
+  && unzip main.zip \
   && cd SuperFamiconv-main \
   && make \
-  && cp /usr/src/SuperFamiconv-master/bin/superfamiconv /usr/bin/superfamiconv \
-  && cd .. && rm -rf master.zip 
+  && cp /usr/src/SuperFamiconv-main/bin/superfamiconv /usr/bin/superfamiconv \
+  && cd .. && rm -rf main.zip 
 
 RUN wget https://github.com/Optiroc/SuperFamicheck/archive/refs/heads/main.zip \
-  && unzip master.zip \
+  && unzip main.zip \
   && cd SuperFamicheck-main \
   && make \
   && cp /usr/src/SuperFamicheck-main//build/release/superfamicheck /usr/bin/superfamicheck \
-  && cd .. && rm -rf master.zip 
+  && cd .. && rm -rf main.zip 
 
 ADD tools/pcx2snes.c /usr/src/pcx2snes.c
 RUN gcc /usr/src/pcx2snes.c -o /usr/bin/pcx2snes
