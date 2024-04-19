@@ -20,7 +20,7 @@ RUN wget https://github.com/cc65/cc65/archive/refs/heads/master.zip -O cc65-mast
 
 WORKDIR /usr/src
 
-RUN wget https://github.com/AntiheroSoftware/SuperFamiconv/archive/refs/heads/main.zip \  
+RUN wget https://github.com/Optiroc/SuperFamiconv/archive/refs/heads/main.zip \  
   && unzip master.zip \
   && cd SuperFamiconv-main \
   && make \
