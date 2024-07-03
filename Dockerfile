@@ -64,7 +64,7 @@ RUN wget https://github.com/emmanuel-marty/lzsa/archive/refs/heads/master.zip \
 
 FROM alpine:edge
 
-RUN apk add --update --no-cache make gcc musl-dev gdb
+RUN apk add --update --no-cache make gcc musl-dev gdb nodejs npm
 
 #RUN apk add --update --no-cache wine
 #RUN ln -s /usr/bin/wine64 /usr/bin/wine
