@@ -64,7 +64,7 @@ RUN wget https://github.com/emmanuel-marty/lzsa/archive/refs/heads/master.zip \
 
 FROM alpine:edge
 
-RUN apk add --update --no-cache make gcc musl-dev gdb nodejs npm
+RUN apk add --update --no-cache make gcc musl-dev gdb nodejs npm git
 
 #RUN apk add --update --no-cache wine
 #RUN ln -s /usr/bin/wine64 /usr/bin/wine
@@ -75,6 +75,8 @@ COPY --from=build /usr/bin/superfamicheck /usr/bin/superfamicheck
 COPY --from=build /usr/bin/pcx2snes /usr/bin/pcx2snes
 COPY --from=build /usr/bin/gfx2snes /usr/bin/gfx2snes
 COPY --from=build /opt/pvsneslib /opt/pvsneslib
+
+RUN npm install -g antiherosoftware/tile-quantitizer 
 
 ENV PATH /opt/cc65/bin:$PATH
 ENV PVSNESLIB_HOME /opt/pvsneslib
