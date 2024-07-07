@@ -22,7 +22,7 @@ docker build -t antiherosoftware/snesdev -f DockerFile --progress plain .
 * pcx2snes
 * gfx2snes
 * image magick
-* tiled-quantitizer v1.0.2
+* tiled-quantitizer v1.0.3
 
 ## Run a command
 
