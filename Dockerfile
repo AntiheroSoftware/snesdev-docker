@@ -76,7 +76,7 @@ COPY --from=build /usr/bin/pcx2snes /usr/bin/pcx2snes
 COPY --from=build /usr/bin/gfx2snes /usr/bin/gfx2snes
 COPY --from=build /opt/pvsneslib /opt/pvsneslib
 
-RUN npm install -g antiherosoftware/tile-quantitizer@1.0.3 
+RUN npm -g  install @antiherosoftware/tile-quantitizer@1.0.3 
 
 ENV PATH /opt/cc65/bin:$PATH
 ENV PVSNESLIB_HOME /opt/pvsneslib
