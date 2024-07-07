@@ -20,7 +20,9 @@ docker build -t antiherosoftware/snesdev -f DockerFile --progress plain .
 * SuperFamiconv
 * SuperFamicheck
 * pcx2snes
-* gfx2snes 
+* gfx2snes
+* image magick
+* tiled-quantitizer v1.0.2
 
 ## Run a command
 
