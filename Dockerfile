@@ -65,7 +65,7 @@ RUN wget https://github.com/emmanuel-marty/lzsa/archive/refs/heads/master.zip \
 RUN wget https://github.com/Kannagi/Higueul/archive/refs/tags/betav0.22.zip \
   && unzip betav0.22.zip \
   && cd Higueul-betav0.22 \
-  && make \
+  && make bin \
   && cp ./bin/higueulc /usr/bin/higueulc
 
 FROM alpine:edge
