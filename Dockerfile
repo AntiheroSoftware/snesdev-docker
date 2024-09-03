@@ -62,6 +62,12 @@ RUN wget https://github.com/emmanuel-marty/lzsa/archive/refs/heads/master.zip \
   && make \
   && cp lzsa /usr/bin/lzsa
 
+RUN wget https://github.com/Kannagi/Higueul/archive/refs/tags/betav0.22.zip \
+  && unzip betav0.22.zip \
+  && cd Higueul-betav0.22 \
+  && make \
+  && cp ./bin/higueulc /usr/bin/higueulc
+
 FROM alpine:edge
 
 RUN apk add --update --no-cache make gcc musl-dev gdb nodejs npm git imagemagick
@@ -75,6 +81,8 @@ COPY --from=build /usr/bin/superfamicheck /usr/bin/superfamicheck
 COPY --from=build /usr/bin/pcx2snes /usr/bin/pcx2snes
 COPY --from=build /usr/bin/gfx2snes /usr/bin/gfx2snes
 COPY --from=build /opt/pvsneslib /opt/pvsneslib
+COPY --from=build /usr/bin/lzsa /usr/bin/lzsa
+COPY --from=build /usr/bin/higueulc /usr/bin/higueulc
 
 RUN npm -g  install @antiherosoftware/tile-quantitizer@1.0.4 
 
