@@ -20,19 +20,19 @@ RUN wget https://github.com/cc65/cc65/archive/refs/heads/master.zip -O cc65-mast
 
 WORKDIR /usr/src
 
-RUN wget https://github.com/Optiroc/SuperFamiconv/archive/refs/heads/main.zip \  
-  && unzip main.zip \
-  && cd SuperFamiconv-main \
-  && make \
-  && cp /usr/src/SuperFamiconv-main/build/release/superfamiconv /usr/bin/superfamiconv \
-  && cd .. && rm -rf main.zip 
-
-#RUN wget https://github.com/AntiheroSoftware/SuperFamiconv/archive/refs/heads/master.zip \
-#  && unzip master.zip \
-#  && cd SuperFamiconv-master \
+#RUN wget https://github.com/Optiroc/SuperFamiconv/archive/refs/heads/main.zip \  
+#  && unzip main.zip \
+#  && cd SuperFamiconv-main \
 #  && make \
-#  && cp /usr/src/SuperFamiconv-master/build/release/superfamiconv /usr/bin/superfamiconv \
-#  && cd .. && rm -rf master.zip 
+#  && cp /usr/src/SuperFamiconv-main/build/release/superfamiconv /usr/bin/superfamiconv \
+#  && cd .. && rm -rf main.zip 
+
+RUN wget https://github.com/AntiheroSoftware/SuperFamiconv/archive/refs/heads/master.zip \
+  && unzip master.zip \
+  && cd SuperFamiconv-master \
+  && make \
+  && cp /usr/src/SuperFamiconv-master/build/release/superfamiconv /usr/bin/superfamiconv \
+  && cd .. && rm -rf master.zip 
 
 RUN wget https://github.com/Optiroc/SuperFamicheck/archive/refs/heads/main.zip \
   && unzip main.zip \
