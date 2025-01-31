@@ -70,7 +70,7 @@ RUN wget https://github.com/Kannagi/Higueul/archive/refs/tags/betav0.22.zip \
 
 FROM alpine:edge
 
-RUN apk add --update --no-cache make gcc musl-dev gdb nodejs npm git imagemagick
+RUN apk add --update --no-cache make gcc musl-dev gdb nodejs npm git imagemagick argp-standalone
 
 #RUN apk add --update --no-cache wine
 #RUN ln -s /usr/bin/wine64 /usr/bin/wine
