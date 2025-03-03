@@ -70,7 +70,7 @@ RUN wget https://github.com/Kannagi/Higueul/archive/refs/tags/betav0.22.zip \
 
 RUN wget https://github.com/dbohdan/hicolor/archive/refs/heads/master.zip \
   && unzip master.zip \
-  && cd hicolor-master.zip \
+  && cd hicolor-master \
   && make \
   && ls -alR
 
