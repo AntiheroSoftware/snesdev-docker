@@ -68,6 +68,12 @@ RUN wget https://github.com/Kannagi/Higueul/archive/refs/tags/betav0.22.zip \
   && make bin \
   && cp ./bin/higueulc /usr/bin/higueulc
 
+RUN wget https://github.com/dbohdan/hicolor/archive/refs/heads/master.zip \
+  && unzip master.zip \
+  && cd hicolor-master.zip \
+  && make \
+  && ls -alR
+
 FROM alpine:edge
 
 RUN apk add --update --no-cache make gcc musl-dev gdb nodejs npm git imagemagick argp-standalone
