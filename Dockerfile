@@ -60,7 +60,7 @@ RUN wget https://github.com/emmanuel-marty/lzsa/archive/refs/heads/master.zip \
   && unzip master.zip \
   && cd lzsa-master \
   && make \
-  && cp lzsa /usr/bin/lzsa /
+  && cp lzsa /usr/bin/lzsa \
   && cd .. && rm -rf master.zip lzsa-master
 
 RUN wget https://github.com/Kannagi/Higueul/archive/refs/tags/betav0.22.zip \
