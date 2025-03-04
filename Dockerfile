@@ -73,7 +73,7 @@ RUN wget https://github.com/dbohdan/hicolor/archive/refs/heads/master.zip \
   && unzip master.zip \
   && cd hicolor-master \
   && make \
-  && ls -alR
+  && cp hicolor /usr/bin/hicolor
 
 FROM alpine:edge
 
@@ -90,6 +90,7 @@ COPY --from=build /usr/bin/gfx2snes /usr/bin/gfx2snes
 COPY --from=build /opt/pvsneslib /opt/pvsneslib
 COPY --from=build /usr/bin/lzsa /usr/bin/lzsa
 COPY --from=build /usr/bin/higueulc /usr/bin/higueulc
+COPY --from=build /usr/bin/hicolor /usr/bin/hicolor
 
 RUN npm -g  install @antiherosoftware/tile-quantitizer@1.0.4 
 
