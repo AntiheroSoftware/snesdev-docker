@@ -92,7 +92,7 @@ COPY --from=build /usr/bin/lzsa /usr/bin/lzsa
 COPY --from=build /usr/bin/higueulc /usr/bin/higueulc
 COPY --from=build /usr/bin/hicolor /usr/bin/hicolor
 
-RUN npm -g  install @antiherosoftware/tile-quantitizer@1.0.4 
+#RUN npm -g  install @antiherosoftware/tile-quantitizer@1.0.4 
 
 ENV PATH /opt/cc65/bin:$PATH
 ENV PVSNESLIB_HOME /opt/pvsneslib
