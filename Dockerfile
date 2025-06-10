@@ -63,6 +63,13 @@ RUN wget https://github.com/emmanuel-marty/lzsa/archive/refs/heads/master.zip \
   && cp lzsa /usr/bin/lzsa \
   && cd .. && rm -rf master.zip lzsa-master
 
+RUN wget https://github.com/emmanuel-marty/salvador/archive/refs/heads/main.zip \
+  && unzip master.zip \
+  && cd salvador-master \
+  && make \
+  && cp salvador /usr/bin/salvador \
+  && cd .. && rm -rf master.zip salvador-master
+
 RUN wget https://github.com/Kannagi/Higueul/archive/refs/tags/betav0.22.zip \
   && unzip betav0.22.zip \
   && cd Higueul-betav0.22 \
@@ -89,6 +96,7 @@ COPY --from=build /usr/bin/pcx2snes /usr/bin/pcx2snes
 COPY --from=build /usr/bin/gfx2snes /usr/bin/gfx2snes
 COPY --from=build /opt/pvsneslib /opt/pvsneslib
 COPY --from=build /usr/bin/lzsa /usr/bin/lzsa
+COPY --from=build /usr/bin/salvador /usr/bin/salvador
 COPY --from=build /usr/bin/higueulc /usr/bin/higueulc
 COPY --from=build /usr/bin/hicolor /usr/bin/hicolor
 
