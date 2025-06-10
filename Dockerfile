@@ -84,7 +84,7 @@ RUN wget https://github.com/dbohdan/hicolor/archive/refs/heads/master.zip \
 
 FROM alpine:edge
 
-RUN apk add --update --no-cache make gcc g++ musl-dev gdb nodejs npm git imagemagick argp-standalone
+RUN apk add --update --no-cache make gcc g++ musl-dev gdb nodejs npm git imagemagick argp-standalone lz4
 
 #RUN apk add --update --no-cache wine
 #RUN ln -s /usr/bin/wine64 /usr/bin/wine
