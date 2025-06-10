@@ -64,11 +64,11 @@ RUN wget https://github.com/emmanuel-marty/lzsa/archive/refs/heads/master.zip \
   && cd .. && rm -rf master.zip lzsa-master
 
 RUN wget https://github.com/emmanuel-marty/salvador/archive/refs/heads/main.zip \
-  && unzip master.zip \
-  && cd salvador-master \
+  && unzip main.zip \
+  && cd salvador-main \
   && make \
   && cp salvador /usr/bin/salvador \
-  && cd .. && rm -rf master.zip salvador-master
+  && cd .. && rm -rf main.zip salvador-main
 
 RUN wget https://github.com/Kannagi/Higueul/archive/refs/tags/betav0.22.zip \
   && unzip betav0.22.zip \
